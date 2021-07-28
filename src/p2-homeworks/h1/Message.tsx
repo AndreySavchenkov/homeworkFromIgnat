@@ -1,4 +1,5 @@
 import React from 'react'
+import s from './Message.module.css'
 
 type MessageType = {
 
@@ -12,17 +13,17 @@ type MessageType = {
 function Message(props: MessageType) {
 
     return (
-        <div>
-            <div>
+        <div className={s.container}>
+            <div className={s.imageContainer}>
                 <img src={props.avatar} alt=""/>
             </div>
-            <div>
+            <div className={s.textContainer}>
                 <div>
-                    <p className="name">{props.name}</p>
-                    <p className="message">{props.message}</p>
+                    <p className={s.name}>{props.name}</p>
+                    <p className={s.message}>{props.message}</p>
                 </div>
                 <div>
-                    <p className="time">{props.avatar}</p>
+                    <p className={s.time}>{props.time}</p>
                 </div>
             </div>
         </div>
