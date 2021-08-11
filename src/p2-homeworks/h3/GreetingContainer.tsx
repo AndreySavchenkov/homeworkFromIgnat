@@ -1,42 +1,41 @@
-import React, {ChangeEvent, useState} from 'react'
+import React, {ChangeEvent, useState, KeyboardEvent} from 'react'
 import Greeting from './Greeting'
 import {UserType} from "./HW3";
 
 type GreetingContainerPropsType = {
-    users: UserType[] // need to fix any
-    addUserCallback: (name: string) => void // need to fix any
+    users: UserType[]
+    addUserCallback: (name: string) => void
 }
 
-// более простой и понятный для новичков
-// function GreetingContainer(props: GreetingPropsType) {
+const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => {
+    const [name, setName] = useState<string>('')
+    const [error, setError] = useState<string>('')
 
-// более современный и удобный для про :)
-// уровень локальной логики
-const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
-    const [name, setName] = useState<string>('') // need to fix any
-    const [error, setError] = useState<string>('') // need to fix any
-
-    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
+    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
         const trimmedName = e.currentTarget.value.trim();
 
-        if(trimmedName) {
+        if (trimmedName) {
             setName(trimmedName)
-            setError('')
+            error && setError('')
         } else {
-            setName('')
+            name && setName('')
             setError('name is require!')
         }
         setName('') // need to fix
     }
+
     const addUser = () => {
         addUserCallback(name)
-        alert(`Hello ${name}!`) // need to fix
+        alert(`Hello ${name}!`)
         setName('')
     }
 
-    const onEnter = (e:KeyboardEvent<HTMLInputElement>) => {
-        if(e.key === 'Enter' && name){
+    const onEnter = (e: KeyboardEvent<HTMLInputElement>) => {
+        debugger
+        if (e.key === 'Enter' && name) {
+
             addUser()
+
         }
     }
 

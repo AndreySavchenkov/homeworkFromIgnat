@@ -1,24 +1,27 @@
-import React from 'react'
+import React, {KeyboardEvent} from 'react'
 import s from './Greeting.module.css'
 
 type GreetingPropsType = {
-    name: any // need to fix any
-    setNameCallback: any // need to fix any
-    addUser: any // need to fix any
-    error: any // need to fix any
-    totalUsers: any // need to fix any
-    onEnter:(e: any) => void
+    name: any
+    setNameCallback: any
+    addUser: any
+    error: any
+    totalUsers: any
+    onEnter:(e: KeyboardEvent<HTMLInputElement>) => void
 }
 
 // презентационная компонента (для верстальщика)
 const Greeting: React.FC<GreetingPropsType> = (
-    {name, setNameCallback, addUser, error, totalUsers} // деструктуризация пропсов
+    {name, setNameCallback, addUser, error, totalUsers, onEnter}
 ) => {
-    const inputClass = s.error ? s.errorInput : s.input // need to fix with (?:)
+    const inputClass = s.error ? s.errorInput : s.input
 
     return (
         <div>
-            <input value={name} onChange={setNameCallback} className={inputClass} onKeyDown={onEnter}/>
+            <input value={name}
+                   onChange={setNameCallback}
+                   className={inputClass}
+                   onKeyDown={onEnter}/>
             <span>{error}</span>
             <button onClick={addUser}>add</button>
             <span>{totalUsers}</span>
