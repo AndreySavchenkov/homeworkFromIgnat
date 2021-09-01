@@ -1,0 +1,22 @@
+.header {
+    background-color: darkcyan;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.link {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #ffffff;
+    border-bottom: 1px dashed;
+}
+.link:hover {
+    cursor: pointer;
+    border-bottom: 1px solid #ffffff;
+}
+
+

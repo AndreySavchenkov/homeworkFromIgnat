@@ -21,7 +21,6 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
             name && setName('')
             setError('name is require!')
         }
-        setName('') // need to fix
     }
 
     const addUser = () => {
@@ -31,11 +30,8 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
     }
 
     const onEnter = (e: KeyboardEvent<HTMLInputElement>) => {
-        debugger
         if (e.key === 'Enter' && name) {
-
             addUser()
-
         }
     }
 
