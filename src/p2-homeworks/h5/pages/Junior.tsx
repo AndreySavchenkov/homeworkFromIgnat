@@ -1,9 +1,9 @@
 import React from "react";
 
 export const Junior = () => {
-    return(
+    return (
         <div>
-
+            Junior
         </div>
     )
 }
