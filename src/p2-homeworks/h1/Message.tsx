@@ -1,33 +1,28 @@
 import React from 'react'
-import s from './Message.module.css'
+import style from './Message.module.scss'
 
-type MessageType = {
-
-        avatar: string
-        name: string
-        message: string
-        time: string
-
+type MessagePropsType = {
+    avatar: string
+    name: string
+    message: string
+    time: string
 }
 
-function Message(props: MessageType) {
+export const Message = (props: MessagePropsType) => {
 
     return (
-        <div className={s.container}>
-            <div className={s.imageContainer}>
+        <div className={style.container}>
+            <div className={style.imageContainer}>
                 <img src={props.avatar} alt=""/>
             </div>
-            <div className={s.textContainer}>
-                <div>
-                    <p className={s.name}>{props.name}</p>
-                    <p className={s.message}>{props.message}</p>
+            <div className={style.textContainer}>
+                <div className={style.messageContainer}>
+                    <p className={style.name}>{props.name}</p>
+                    <p className={style.message}>{props.message}</p>
                 </div>
-                <div>
-                    <p className={s.time}>{props.time}</p>
-                </div>
+                <p className={style.time}>{props.time}</p>
             </div>
         </div>
     )
 }
 
-export default Message

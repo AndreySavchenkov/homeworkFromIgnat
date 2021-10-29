@@ -1,0 +1,62 @@
+@import "./src/common/style/variables.module";
+
+.container {
+  display: flex;
+  background-color: $mainColor;
+
+  .imageContainer {
+    img {
+      margin-top: 60px;
+      margin-left: 10px;
+      margin-right: 10px;
+      width: 60px;
+      height: 60px;
+      border: 3px solid $secondColor;
+      border-radius: 50px;
+    }
+  }
+
+  .textContainer {
+    position: relative;
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    background-color: $secondColor;
+    border-radius: 14px;
+
+    .messageContainer {
+      .name {
+        color: $titleColor;
+        margin-top: 0;
+        margin-bottom: 31px;
+      }
+
+      .message {
+        color: $textColor;
+        margin-top: 0;
+      }
+    }
+
+    .time {
+      color: gray;
+      margin-left: 20px;
+      margin-top: 53px;
+    }
+
+    &::before {
+      content: '';
+      border: 10px solid transparent;
+      border-right: 10px solid $secondColor;
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      margin-top: -10px;
+    }
+  }
+}
+
+
+
+
+
+
