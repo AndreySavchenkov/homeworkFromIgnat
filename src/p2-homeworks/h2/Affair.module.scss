@@ -1,0 +1,28 @@
+@import "./src/common/style/variables.module";
+
+
+.affair {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  padding: 5px 10px;
+
+  .affairName {
+    font-weight: bold;
+    width: 100px;
+    color: $textColor;
+  }
+
+  .affairPriority {
+    font-style: italic;
+    color: $titleColor
+  }
+
+  button {
+    background-color: $mainColor;
+  }
+
+}
+
+
+

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Affairs from './Affairs'
-import styles from './Affairs.module.css'
+import styles from './HW2.module.scss'
 
 // types
 export type AffairPriorityType = 'high' | 'low' | 'middle'
@@ -38,17 +38,11 @@ function HW2() {
 
     return (
         <div className={styles.wrapper}>
-
-            homeworks 2
-
-            {/*should work (должно работать)*/}
             <Affairs
                 data={filteredAffairs}
                 setFilter={setFilter}
                 deleteAffairCallback={deleteAffairCallback}
             />
-
-
         </div>
     )
 }

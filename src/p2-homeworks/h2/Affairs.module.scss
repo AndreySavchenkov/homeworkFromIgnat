@@ -1,0 +1,15 @@
+@import "./src/common/style/variables.module";
+
+.buttonContainer{
+  padding-left: 100px;
+  .button {
+    margin-left: 10px;
+    background: $mainColor;
+    &:focus {
+      color: $textColor;
+    }
+  }
+}
+
+
+
